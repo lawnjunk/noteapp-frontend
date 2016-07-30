@@ -73,11 +73,7 @@ module.exports = {
       },
       {
         test: /\.woff.*/,
-        loader: 'url?limit?10000&mimetype=application/font-woff&name=fonts/[name].[ext]',
-      },
-      {
-        test: /\.woff2.*/,
-        loader: 'url?limit?10000&mimetype=application/font-woff2&name=fonts/[name].[ext]',
+        loader: 'file?name=fonts/[name].[ext]',
       },
       { 
         test: /\.[ot]tf.*/,

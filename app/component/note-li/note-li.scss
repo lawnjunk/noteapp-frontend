@@ -1,6 +1,7 @@
 @import "_theme";
 
 .app-note-li {
+  position: relative;
   list-style: none;
   border: 1px solid $app-border;
   border-radius: 4px;
@@ -13,7 +14,8 @@
   h2 {
     display: inline-block;
     margin-top: 4px;
-    margin-right: 4px;
+    margin-left: 22px;
+    margin-right: 5px;
     font-size: 1.8em;
     padding-left: 0px;
     border: none;
@@ -29,8 +31,24 @@
     font-size: 1em;
   }
 
-  .fa-trash-o {
+  .fa-pencil {
+    position: absolute;
+    margin-top: 25px;
     margin-right: 5px;
+  }
+
+  .fa-pencil:hover {
+    color: green;
+  }
+
+  .fa-pencil:active {
+    color: $app-light;
+  }
+
+  .fa-trash-o {
+    position: absolute;
+    margin-right: 5px;
+    margin-top: 5px;
   }
 
   .fa-trash-o:hover {
