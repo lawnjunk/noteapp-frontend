@@ -1,4 +1,6 @@
 <div class="app-list">
+  <i ng-click="listCtrl.deleteList({listId: listCtrl.list._id})" 
+    class="fa fa-trash-o fa-2x app-delete-list"> </i>
   <h2> {{listCtrl.list.name}} </h2>
   <ul>
     <app-note-li ng-repeat="item in listCtrl.list.notes" note="item"

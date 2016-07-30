@@ -12,6 +12,7 @@ angular.module('noteApp').directive('appList', function(){
     bindToController: true,
     scope: {
       list: '=',
+      deleteList: '&',
     }
   }
 });

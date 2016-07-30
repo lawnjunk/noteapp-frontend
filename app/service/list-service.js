@@ -42,19 +42,17 @@ function listService($q, $http, noteService){
     });
   };
 
-  //service.deleteNote = function(noteId){
-    //return $q((resolve, reject) => {
-      //noteService.deleteNote(noteId)
-        //.then( note => {
-          //this.list.notes.filter(note => {
-            //if (note._id === noteId) return false;
-            //return true;
-          //})     
-        //}, (err) => {
-          //reject(err);
-        //})
-    //});
-  //};
+  service.deleteList = function(listId){
+    return $q((resolve, reject) => {
+      $http.delete(`${__API_URL__}/api/list/${listId}`)
+        .then((res) => {
+          resolve(res.data);
+        }, err => {
+          console.error(err);
+          reject(err);
+        });
+    });  
+  };
 
   return service;
 }
