@@ -1,0 +1,14 @@
+// vendor
+
+@import "~normalize-scss";
+@include normalize();
+
+@import "vendor/bootstrap/stylesheets/_bootstrap-custom.scss";
+
+// app
+@import "_theme";
+
+body {
+  background-color: #ff7a7a;
+}
+
