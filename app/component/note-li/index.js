@@ -7,14 +7,15 @@ angular.module('noteApp').directive('appNoteLi', function(){
     restrict: 'E',
     replace: true,
     template: require('./note-li.html'),
-    controller: [NoteLiController],
+    controller: ['listService', NoteLiController],
     controllerAs: 'noteLiCtrl',
     bindToController: true,
     scope: {
       note: '=',
+      deleteNote: '&',
     },
   }
 });
 
-function NoteLiController(){
+function NoteLiController(listService){
 }

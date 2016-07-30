@@ -1,4 +1,6 @@
 <li class="app-note-li">
+  <i ng-click="noteLiCtrl.deleteNote({noteId: noteLiCtrl.note._id})" 
+    class="fa fa-trash-o"> </i>
   <h2> {{noteLiCtrl.note.name}} </h2>
   <p> {{noteLiCtrl.note.content}} </h2>
 </li>

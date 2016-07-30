@@ -1,7 +1,13 @@
 @import "_theme";
 
 .app-main {
-  width: 100%;
+  width: 2000%;
   height: 100%;
   background-color: $app-light;
+
+  .app-list {
+    float: left; 
+    margin-top: 10px;
+    background-color: white;
+  }
 }

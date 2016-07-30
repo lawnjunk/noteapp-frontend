@@ -7,7 +7,7 @@ angular.module('noteApp').directive('appList', function(){
     restrict: 'E',
     replace: true,
     template: require('./list.html'),
-    controller: [ListController],
+    controller: ['noteService', ListController],
     controllerAs: 'listCtrl',
     bindToController: true,
     scope: {
@@ -16,6 +16,18 @@ angular.module('noteApp').directive('appList', function(){
   }
 });
 
-function ListController(){
+function ListController(noteService){
+  this.deleteNote = function(noteId){
+    noteService.deleteNote(noteId)
+      .then( note => {
+        console.log('boooy');
+        this.list.notes = this.list.notes.filter( note => {
+          if (note._id === noteId) return false;
+          return true;
+        });
+      }, (err) => {
+        console.error(err)
+      });
+  };
 }
 

@@ -9,6 +9,7 @@
   padding-bottom: 5px;
   background-color: rgba(0, 0, 0, 0.1);
 
+
   h2 {
     display: inline-block;
     margin-top: 4px;
@@ -26,6 +27,18 @@
     display: inline;
     font-weight: bold;
     font-size: 1em;
+  }
+
+  .fa-trash-o {
+    margin-right: 5px;
+  }
+
+  .fa-trash-o:hover {
+    color: red;
+  }
+
+  .fa-trash-o:active{
+    color: $app-light;
   }
 
 }

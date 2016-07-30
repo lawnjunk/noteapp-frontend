@@ -23,6 +23,7 @@ function CreateNoteFormController(noteService){
     noteService.createNote(this.note)
       .then( note => {
         this.list.notes.push(note);
+        this.note = {};
       }, err => {
         console.error(err);
       })

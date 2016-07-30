@@ -2,9 +2,9 @@
 
 const angular = require('angular');
 
-angular.module('noteApp').factory('listService',  ['$q', '$http', listService]);
+angular.module('noteApp').factory('listService',  ['$q', '$http', 'noteService', listService]);
 
-function listService($q, $http){
+function listService($q, $http, noteService){
   const service = {};
   service.lists = [];
 
@@ -41,6 +41,20 @@ function listService($q, $http){
         });
     });
   };
+
+  //service.deleteNote = function(noteId){
+    //return $q((resolve, reject) => {
+      //noteService.deleteNote(noteId)
+        //.then( note => {
+          //this.list.notes.filter(note => {
+            //if (note._id === noteId) return false;
+            //return true;
+          //})     
+        //}, (err) => {
+          //reject(err);
+        //})
+    //});
+  //};
 
   return service;
 }

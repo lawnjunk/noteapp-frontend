@@ -2,8 +2,8 @@
 
 @import "~normalize-scss";
 @include normalize();
-
 @import "vendor/bootstrap/stylesheets/_bootstrap-custom.scss";
+@import "vendor/font-awesome/scss/font-awesome.scss";
 
 // app
 @import "_theme";
