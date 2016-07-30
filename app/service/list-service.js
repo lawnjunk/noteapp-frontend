@@ -33,7 +33,7 @@ function listService($q, $http){
     return $q((resolve, reject) => {
       $http.post(`${__API_URL__}/api/list`, data, requestConfig)
         .then((res) => {
-          this.lists.push(res.body);
+          this.lists.push(res.data);
           resolve(res.body);
         }, (err) => {
           console.error(err);

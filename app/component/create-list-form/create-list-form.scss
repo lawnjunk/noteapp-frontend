@@ -1,6 +1,10 @@
 @import "_theme";
 .app-create-list-form {
-  background-color: $app-light;
+  display: inline-block;
   margin: 5px;
   padding: 5px;
+
+  background-color: $app-light;
+  border: 1px solid #afafaf;
+  border-radius: 4px;
 }

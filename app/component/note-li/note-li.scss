@@ -1,0 +1,31 @@
+@import "_theme";
+
+.app-note-li {
+  list-style: none;
+  border: 1px solid $app-border;
+  border-radius: 4px;
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+
+  h2 {
+    display: inline-block;
+    margin-top: 4px;
+    margin-right: 4px;
+    font-size: 1.8em;
+    padding-left: 0px;
+    border: none;
+    border-radius: 0px;;
+    border-bottom: 1px solid $app-border;
+    color: $app-light;
+    text-shadow: 0px 0px 1px $app-dark;
+  }
+
+  p {
+    display: inline;
+    font-weight: bold;
+    font-size: 1em;
+  }
+
+}

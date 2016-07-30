@@ -1,0 +1,9 @@
+<div class="app-list">
+  <h2> {{listCtrl.list.name}} </h2>
+  <ul>
+    <app-note-li ng-repeat="item in listCtrl.list.notes" note="item"> </app-note-li>
+    <li>
+      <app-create-note-form list="listCtrl.list"></app-create-note-form>
+    </li>
+  </ul>
+</div>

@@ -20,6 +20,8 @@ angular.module('noteApp').directive('appMain', function(){
 function MainController(listService){
   this.apiURL = __API_URL__;
   listService.getLists()
-    .then( lists => console.log(lists)
+    .then( lists => {
+      this.lists = listService.lists;
+    }
       , err => console.error('FUCK', err));
 }

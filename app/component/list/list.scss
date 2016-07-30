@@ -1,0 +1,22 @@
+@import "_theme";
+
+.app-list {
+  display: inline-block;
+  width: 300px;
+  margin: 5px;
+  padding: 10px 10px 10px 10px;
+  border: 1px solid $app-border;
+  border-radius: 4px;
+
+  h2 {
+    padding: 1px 4px 4px 4px;
+    margin: 0px;
+    margin-bottom: 10px;
+    border: 1px solid $app-border;
+    border-radius: 4px;
+  }
+
+  ul {
+    padding: 0px;
+  }
+}
