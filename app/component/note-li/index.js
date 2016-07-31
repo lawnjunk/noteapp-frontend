@@ -21,13 +21,22 @@ function NoteLiController( $log, listService, noteService){
   this.displayEditModal = false;
 
   this.editNote = function(){
+    $log.debug('noteLiCtrl.editNote');
+    this.backup = angular.copy(this.note);
     this.displayEditModal = true;
   }
 
-  this.updateNote = function(){
+  this.cancelUpdate = function(){
+    $log.debug('noteLiCtrl.cancelUpdate');
+    this.note.name = this.backup.name;
+    this.note.content = this.backup.content;
+    this.displayEditModal = false;
+  }
+
+  this.updateNote = function(note){
     $log.debug('noteLiCtrl.updateNote');
     var original = angular.copy(this.note);
-    noteService.updateNote(this.note)
+    noteService.updateNote(note)
       .then( note => {
         this.note.name = note.name;
         this.note.content = note.content;
@@ -38,6 +47,5 @@ function NoteLiController( $log, listService, noteService){
         this.note.name = original.name;
         this.note.content = original.content;
       });
-
   };
 }

@@ -7,5 +7,6 @@
   <p> {{noteLiCtrl.note.content}} </h2>
 
   <app-edit-note-modal ng-show="noteLiCtrl.displayEditModal" note="noteLiCtrl.note" 
-    update-note="noteLiCtrl.updateNote(note)"></app-edit-note-modal>
+    update-note="noteLiCtrl.updateNote(note)"
+    cancel-update="noteLiCtrl.cancelUpdate()"></app-edit-note-modal>
 </li>
