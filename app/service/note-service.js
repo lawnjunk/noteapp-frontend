@@ -46,6 +46,7 @@ function noteService($q, $log, $http){
         })
         .catch(reject);
     });
-  }
+  };
+
   return service;
 };

@@ -35,7 +35,6 @@ function NoteLiController( $log, listService, noteService){
 
   this.updateNote = function(note){
     $log.debug('noteLiCtrl.updateNote');
-    var original = angular.copy(this.note);
     noteService.updateNote(note)
       .then( note => {
         this.note.name = note.name;
@@ -44,8 +43,9 @@ function NoteLiController( $log, listService, noteService){
       })
       .catch(err => {
         $log.error(err);
-        this.note.name = original.name;
-        this.note.content = original.content;
+        this.note.name = this.backup.name;
+        this.note.content = this.backup.content;
+        this.displayEditModal = false;
       });
   };
 }

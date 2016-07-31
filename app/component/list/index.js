@@ -18,6 +18,33 @@ angular.module('noteApp').directive('appList', function(){
 });
 
 function ListController( $log, noteService, listService){
+  this.displayEditList = false;
+
+  this.editList = function(){
+    $log.debug('listCtrl.editList');
+    this.displayEditList = true;
+    this.backup = angular.copy(this.list);
+  }
+
+  this.updateList = function(list){
+    $log.debug('listCtrl.updateList');
+    listService.updateList(list)
+      .then(list => {
+        this.list.name = list.name;
+        this.displayEditList = false;
+      })
+      .catch( err => {
+        this.list.name = this.backup.name;
+        this.displayEditList = false;
+      });
+  }
+
+  this.cancelUpdate = function(list){
+    $log.debug('listCtrl.cancelUpdate');
+    this.displayEditList = false;
+    this.list.name = this.backup.name;
+  }
+
   this.deleteNote = function(noteId){
     $log.debug('listCtrl.deleteNote');
     noteService.deleteNote(noteId)

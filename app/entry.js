@@ -21,3 +21,4 @@ require('./component/list');
 require('./component/note-li');
 require('./component/create-note-form');
 require('./component/edit-note-modal');
+require('./component/edit-list-modal');

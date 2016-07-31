@@ -58,6 +58,17 @@ function listService($q, $log, $http, noteService){
     });  
   };
 
+  service.updateList = function(data){
+    $log.debug('listService.updateList');
+    return $q((resolve, reject) => {
+      $http.put(`${__API_URL__}/api/list/${data._id}`, data, requestConfig)
+        .then( res => {
+          resolve(res.data);
+        })
+        .catch(reject);
+    });
+  };
+
   return service;
 }
 

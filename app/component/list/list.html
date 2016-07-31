@@ -1,7 +1,12 @@
 <div class="app-list">
   <i ng-click="listCtrl.deleteList(listCtrl.list._id)" 
-    class="fa fa-trash-o fa-2x app-delete-list"> </i>
-  <h2> {{listCtrl.list.name}} </h2>
+    class="fa fa-trash-o fa-2x app-delete-list-btn"> </i>
+  <i ng-click="listCtrl.editList()" 
+    class="fa fa-pencil fa-2x app-edit-list-btn"> </i>
+  <app-edit-list-modal ng-show="listCtrl.displayEditList" list="listCtrl.list"
+    update-list="listCtrl.updateList(list)" cancel-update="listCtrl.cancelUpdate()"></app-edit-list-modal>
+
+  <h2 ng-dblclick="listCtrl.editList()"> {{listCtrl.list.name}} </h2>
   <ul>
     <app-note-li ng-repeat="item in listCtrl.list.notes" note="item"
       delete-note="listCtrl.deleteNote(noteId)"> </app-note-li>

@@ -27,19 +27,35 @@
     }
   }
 
-  .app-delete-list {
+  .app-delete-list-btn {
     position: absolute;
     font-size: 1.5em;
-    margin-right: 10px;
     padding: 2px;
     border-radius: 2px;
   }
 
-  .app-delete-list:hover {
+  .app-delete-list-btn:hover {
     color: red;
   }
 
-  .app-delete-list:active {
+  .app-delete-list-btn:active {
+    color: blue;
+  }
+
+  .app-edit-list-btn {
+    position: absolute;
+    left: 0;
+    font-size: 1.5em;
+    margin-left: 35px;
+    padding: 2px;
+    border-radius: 2px;
+  }
+
+  .app-edit-list-btn:hover {
+    color: green;
+  }
+
+  .app-edit-list-btn:active {
     color: blue;
   }
 
