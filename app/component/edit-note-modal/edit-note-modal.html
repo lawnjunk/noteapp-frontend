@@ -1,10 +1,12 @@
 <div class="app-edit-note-modal">
   <div class="app-modal-background"> </div>
-  <form novalidate ng-submit="updateNote(note)">
+  <form class="app-edit-note-modal-form"
+    novalidate ng-submit="updateNote(note)">
     <div class="form-group">
       <input class="form-control" type="text" ng-model="note.name">
       <input class="form-control" type="text" ng-model="note.content"> 
     </div>
-    <button class="btn btn-default" type="submit">Update Note</button>
+    <button ng-click="updateNote({note: note})"
+      class="btn btn-default" type="submit">Update Note</button>
   </form>
 </div>

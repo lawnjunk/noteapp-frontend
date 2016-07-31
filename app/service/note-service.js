@@ -37,5 +37,15 @@ function noteService($q, $log, $http){
     })
   };
 
+  service.updateNote = function(data) {
+    $log.debug('noteService.updateNote');
+    return $q((resolve, reject) => {
+      $http.put(`${__API_URL__}/api/note/${data._id}`, data, requestConfig)
+        .then(res => {
+          resolve(res.data);
+        })
+        .catch(reject);
+    });
+  }
   return service;
 };
