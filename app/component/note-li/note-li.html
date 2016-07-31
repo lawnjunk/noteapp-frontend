@@ -5,4 +5,6 @@
     class="fa fa-pencil"> </i>
   <h2> {{noteLiCtrl.note.name}} </h2>
   <p> {{noteLiCtrl.note.content}} </h2>
+
+  <app-edit-note-modal ng-show="noteLiCtrl.displayEditModal" note="noteLiCtrl.note"></app-edit-note-modal>
 </li>

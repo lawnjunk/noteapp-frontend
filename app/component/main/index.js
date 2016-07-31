@@ -10,29 +10,19 @@ angular.module('noteApp').directive('appMain', function(){
     restrict: 'E',
     replace: true,
     template: require('./main.html'),
-    controller: ['listService', MainController],
+    controller: ['$log', 'listService', MainController],
     controllerAs: 'mainCtrl',
     bindToController: true,
     scope: {},
   }
 });
 
-function MainController(listService){
+function MainController($log, listService){
   this.apiURL = __API_URL__;
-  this.lists = [];
 
   listService.getLists()
     .then( lists => {
       this.lists = listService.lists;
-    }, err => console.error('FUCK', err));
-
-  this.deleteList = function(listId) {
-    listService.deleteList(listId)
-      .then( list => {
-        this.lists = this.lists.filter( list => {
-          if(list._id === listId) return false;
-          return true;
-        });
-      }, (err) => console.error(err));
-  };
+    })
+   .catch( err => $log.error(err));
 }

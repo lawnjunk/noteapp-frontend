@@ -7,27 +7,25 @@ angular.module('noteApp').directive('appCreateListForm', function(){
     restrict: 'E',
     replace: true,
     template: require('./create-list-form.html'),
-    controller: ['listService', CreateListFormController],
+    controller: ['$log', 'listService', CreateListFormController],
     controllerAs: 'createListFormCtrl',
     bindToController: true,
     scope: {},
   }
 });
 
-function CreateListFormController(listService){
+function CreateListFormController($log, listService){
   this.list = {};
-  this.err = null;
 
   this.createList = function(){
+    $log.debug('createListFormCtrl.createList');
+
     listService.createList(this.list)
       .then((list) => {
-        console.log('BOOOYA');
-        console.log(list);
         this.list = {};
         this.err = null;
       }, (err) => {
-        console.error('err');
-        this.err = !!err;
+        $log.error(err);
       })
   }
 }

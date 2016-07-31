@@ -18,4 +18,5 @@ angular.module('noteApp').directive('appNoteLi', function(){
 });
 
 function NoteLiController(listService){
+  this.displayEditModal = true;
 }
