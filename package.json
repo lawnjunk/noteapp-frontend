@@ -31,6 +31,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "node server.js",
+    "heroku-postbuild":"./node_modules/webpack/bin/webpack.js",
     "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
